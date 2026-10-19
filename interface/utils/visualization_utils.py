@@ -3,6 +3,18 @@ import matplotlib.pyplot as plt
 import matplotlib as mpl
 import seaborn as sns
 
+mpl.rcParams.update({
+    'figure.facecolor': '#0b1220',
+    'axes.facecolor': '#101a2a',
+    'axes.edgecolor': '#30415a',
+    'axes.labelcolor': '#b8c4d6',
+    'axes.titlecolor': '#e8eef8',
+    'xtick.color': '#91a1b8',
+    'ytick.color': '#91a1b8',
+    'text.color': '#e8eef8',
+    'grid.color': '#2a3a50',
+})
+
 
 def plot_training_metrics(hist, algo):
     """Plot training metrics"""

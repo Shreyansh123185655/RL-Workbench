@@ -1,4 +1,4 @@
-"""Interface - UI components for the RL Playground"""
+"""Interface components for the RL Workbench."""
 
 # Core components are imported directly, not through __init__
 # This avoids circular import issues

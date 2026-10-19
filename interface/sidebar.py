@@ -53,10 +53,10 @@ def render_sidebar():
   """Render sidebar with grouped environment and algorithm selection"""
   
   with st.sidebar:
-    st.markdown("<h2 style='text-align: center; color: white; margin-bottom: 2rem;'>Configuration</h2>", 
+    st.markdown("<div style='padding:.2rem .35rem .8rem'><div style='font:500 .68rem DM Mono,monospace; letter-spacing:.12em; color:#67f3c0'>EXPERIMENT CONTROLS</div><h2 style='margin:.25rem 0 .2rem; color:#edf4ff'>Control deck</h2><div style='color:#91a1b8;font-size:.78rem'>Choose the task and learning rule</div></div>",
                 unsafe_allow_html=True)
     
-    st.markdown("### Environment")
+    st.markdown("### 01 · Environment")
     
     # Get all environment types (groups + standalone)
     env_types = list(ENVIRONMENT_GROUPS.keys()) + STANDALONE_ENVS
@@ -130,7 +130,7 @@ def render_sidebar():
     
     st.markdown("---")
     
-    st.markdown("### Algorithm")
+    st.markdown("### 02 · Algorithm")
     algo_names = list(ALGORITHMS.keys())
     algo = st.selectbox(
       "Choose an algorithm",
@@ -160,7 +160,7 @@ def render_sidebar():
     
     st.markdown("---")
     
-    st.markdown("### Hyperparameters")
+    st.markdown("### 03 · Hyperparameters")
     render_hyperparameters(algo)
     
     st.markdown("---")

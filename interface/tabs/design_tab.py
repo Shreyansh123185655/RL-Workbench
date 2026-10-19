@@ -235,7 +235,8 @@ def render_environment_analysis_view():
         fig.update_layout(
             title=f"Algorithm Comparison on {env}",
             xaxis_title="Episode", yaxis_title="Reward",
-            hovermode='x unified', height=600, template='plotly_white'
+            hovermode='x unified', height=600, template='plotly_dark',
+            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'
         )
         
         st.plotly_chart(fig, use_container_width=True)
@@ -343,7 +344,8 @@ def render_algorithm_analysis_view():
         fig.update_layout(
             title=f"Impact of {param} on Performance (⭐ = Best)",
             xaxis_title=param, yaxis_title="Average Reward",
-            height=500, template='plotly_white'
+            height=500, template='plotly_dark',
+            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'
         )
         
         st.plotly_chart(fig, use_container_width=True)
@@ -475,7 +477,8 @@ def render_comparison_view():
         fig.update_layout(
             title="Reward Progression Comparison",
             xaxis_title="Episode", yaxis_title="Reward",
-            hovermode='x unified', height=600, template='plotly_white'
+            hovermode='x unified', height=600, template='plotly_dark',
+            paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)'
         )
         
         st.plotly_chart(fig, use_container_width=True)
