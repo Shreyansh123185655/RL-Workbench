@@ -51,6 +51,20 @@ ALGORITHMS = {
         'features': ['Off-policy', 'Aggressive', 'Max-based updates'],
         'complexity': 'Medium',
         'requires_model': False
+    },
+    'Double Q-Learning': {
+        'type': 'Model-Free Control',
+        'description': 'Reduces overestimation bias using two independent Q-functions.',
+        'features': ['Off-policy', 'Bias reduction', 'Two Q-functions'],
+        'complexity': 'Medium',
+        'requires_model': False
+    },
+    'Expected SARSA': {
+        'type': 'Model-Free Control',
+        'description': 'Uses expected value over all actions instead of single action.',
+        'features': ['On-policy', 'Lower variance', 'Expected value'],
+        'complexity': 'Medium',
+        'requires_model': False
     }
 }
 

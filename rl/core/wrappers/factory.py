@@ -5,6 +5,9 @@ from rl.core.wrappers.qlearning import QLearningAgent
 from rl.core.wrappers.td0 import TD0Agent
 from rl.core.wrappers.sarsa import SARSAAgent
 from rl.core.wrappers.nstep_td import NStepTDAgent
+from rl.core.wrappers.double_qlearning import DoubleQLearningAgent
+from rl.core.wrappers.expected_sarsa import ExpectedSARSAAgent
+
 def create_agent(algo, env, **params):
     
     AGENTS = {
@@ -15,6 +18,8 @@ def create_agent(algo, env, **params):
         'TD(0)': TD0Agent,
         'SARSA': SARSAAgent,
         'n-step TD': NStepTDAgent,
+        'Double Q-Learning': DoubleQLearningAgent,
+        'Expected SARSA': ExpectedSARSAAgent,
     }
     
     if algo not in AGENTS:

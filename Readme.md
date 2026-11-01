@@ -27,11 +27,12 @@ The **RL Playground** is a comprehensive educational tool designed to help stude
 
 ###  Key Highlights
 
--  **7 Classic RL Algorithms** - From Dynamic Programming to Temporal Difference methods
+-  **9 RL Algorithms** - Including Double Q-Learning and Expected SARSA for advanced learning
 -  **28+ Environments** - GridWorlds, Mazes, Classic Control, and Gymnasium environments
 -  **Rich Visualizations** - Training progress, convergence curves, and policy animations
 -  **Interactive Training** - Adjust hyperparameters and see results instantly
 -  **Performance Analytics** - Compare algorithms and track training history
+-  **Comparative Analysis** - Statistical significance testing and multi-algorithm comparison
 -  **Video Generation** - Automatic GIF/video creation of learned policies
 
 ---
@@ -53,8 +54,9 @@ The **RL Playground** is a comprehensive educational tool designed to help stude
 ###  User Experience
 - **Modern UI** with gradient themes and smooth animations
 - **Responsive design** that works on desktop and mobile
-- **Three main tabs**: Training, Inference, and Design/Analysis
+- **Four main tabs**: Training, Inference, Design/Analysis, and Comparative Analysis
 - **Real-time feedback** during training
+- **Statistical analysis** with significance testing for algorithm comparison
 
 ---
 
@@ -146,7 +148,7 @@ The application will open in your default browser at `http://localhost:8501`
    - View environment details and difficulty
 
 2. **Choose an Algorithm** (Sidebar)
-   - Pick from 7 RL algorithms
+   - Pick from 9 RL algorithms (including Double Q-Learning and Expected SARSA)
    - See algorithm type and features
 
 3. **Configure Parameters** (Sidebar)
@@ -168,11 +170,17 @@ The application will open in your default browser at `http://localhost:8501`
    - Compare different runs
    - Filter by environment and algorithm
 
+7. **Compare Algorithms** (Comparative Analysis Tab) 🆕
+   - Select 2-4 algorithms to compare
+   - Run multiple iterations for statistical significance
+   - View performance metrics, learning curves, and statistical tests
+   - Export results for further analysis
+
 ---
 
 ##  Algorithms
 
-The playground implements 7 fundamental RL algorithms across 4 categories:
+The playground implements 9 fundamental RL algorithms across 4 categories:
 
 ###  Dynamic Programming
 
@@ -231,6 +239,20 @@ The playground implements 7 fundamental RL algorithms across 4 categories:
 - **Best for**: Finding optimal policies, deterministic environments
 - **Parameters**: `alpha`, `gamma`, `epsilon`, `episodes`
 
+#### Double Q-Learning 🆕
+- **Type**: Off-policy TD control
+- **Description**: Reduces overestimation bias using two independent Q-functions
+- **Features**: Bias reduction, more accurate value estimates, off-policy
+- **Best for**: Stochastic environments where overestimation is problematic
+- **Parameters**: `alpha`, `gamma`, `epsilon`, `episodes`
+
+#### Expected SARSA 🆕
+- **Type**: On-policy TD control
+- **Description**: Uses expected value over all actions instead of single action
+- **Features**: Lower variance, stable learning, on-policy
+- **Best for**: Environments requiring stable convergence
+- **Parameters**: `alpha`, `gamma`, `epsilon`, `episodes`
+
 ### Algorithm Comparison
 
 | Algorithm | Type | Model-Free | Bootstrapping | Best Use Case |
@@ -242,6 +264,8 @@ The playground implements 7 fundamental RL algorithms across 4 categories:
 | n-step TD | TD | ✅ | ✅ | Flexible learning |
 | SARSA | Control | ✅ | ✅ | Safe exploration |
 | Q-Learning | Control | ✅ | ✅ | Optimal policies |
+| Double Q-Learning | Control | ✅ | ✅ | Stochastic environments |
+| Expected SARSA | Control | ✅ | ✅ | Stable convergence |
 
 ---
 
@@ -359,6 +383,9 @@ Bonus/
 │   │   ├── mc.py              # Monte Carlo methods
 │   │   ├── qlearning.py       # Q-Learning algorithm
 │   │   ├── td.py              # Temporal Difference methods (TD(0), n-step, SARSA)
+│   │   ├── double_qlearning.py # Double Q-Learning algorithm 🆕
+│   │   ├── expected_sarsa.py  # Expected SARSA algorithm 🆕
+│   │   ├── comparative_analysis.py # Statistical comparison module 🆕
 │   │   └── wrappers/          # Environment wrappers and utilities
 │   │
 │   └── envs/                  # Environment implementations
@@ -382,11 +409,13 @@ Bonus/
 │   │   ├── __init__.py
 │   │   ├── training_tab.py    # Training interface
 │   │   ├── inference_tab.py   # Inference/testing interface
-│   │   └── design_tab.py      # Analysis and history
+│   │   ├── design_tab.py      # Analysis and history
+│   │   └── comparison_tab.py  # Comparative analysis interface 🆕
 │   │
 │   └── utils/                 # UI utilities
 │       ├── video_generator.py # GIF/video generation
-│       └── visualizations.py  # Plotting and charts
+│       ├── visualizations.py  # Plotting and charts
+│       └── comparison_visualizations.py # Advanced comparison charts 🆕
 │
 ├── data/                      # Training data storage
 │   └── training_history.json  # Saved training runs
